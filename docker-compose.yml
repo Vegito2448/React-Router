@@ -1,0 +1,16 @@
+version: 'version'
+services:
+  #stdin_open: true
+  #tty: true
+  build:
+    context: .
+    dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - REACT_APP=penyadev
+      - CHOKIDAR_USEPOLLING=true
+      #env_file:
+        #- ./.env
